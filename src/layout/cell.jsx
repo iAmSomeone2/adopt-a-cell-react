@@ -10,14 +10,28 @@ class Cell extends Component {
         super(props);
         this.state = {
             claimed: false,
-            index: 0,
+            index: props.index,
             owner: null,
             size: 128,
         };
     }
 
+    setClaimed(isClaimed){
+        /*
+            Sets the boolean value of this.state.claimed.
+        */
+        this.setState({ claimed: isClaimed});
+    }
+
+    setOwner(newOwner){
+        /*
+            Sets the string value of this.state.owner.
+        */
+       this.setState({ owner: newOwner});
+    }
+
     render() {
-        // Change visuals and alt-text depending on which state the tile is in
+        // Change visuals and alt-text depending on which state the tile is in.
 
         let cell_type;
         let cell_desc;
@@ -30,6 +44,7 @@ class Cell extends Component {
         }
 
         return (
+            // This needs to be modified to be a button instead of just an image.
             <div>
                 <img src={cell_type} alt={cell_desc} width={this.state.size}></img>
             </div>
