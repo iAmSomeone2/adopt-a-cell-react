@@ -1,33 +1,51 @@
 import React, { Component } from 'react';
+import "./cell.css"
 import unclaimed_cell from './assets/solar-cell_unclaimed.svg';
 import claimed_cell from './assets/solar-cell_claimed.svg';
 
 const unclaimed_cell_desc = "Unclaimed cell #";
-const claimed_cell_desc = "Cell paid for by: ";
+const claimed_cell_desc = "Cell adopted by: ";
 
 class Cell extends Component {
+    originalSize;
     constructor(props){
         super(props);
         this.state = {
-            claimed: false,
-            index: props.index,
-            owner: null,
-            size: 128,
+            index: this.props.index,
+            size: this.props.size,
+            mouseOver: false,
+            componentClasses: ["Cell"]
         };
+        this.originalSize = this.state.size;
+        // Bind the event handlers so that they can be used later.
+        this.handleMouseOver = this.handleMouseOver.bind(this);
+        this.handleMouseOut = this.handleMouseOut.bind(this);
     }
 
-    setClaimed(isClaimed){
+    handleMouseOver(event) {
         /*
-            Sets the boolean value of this.state.claimed.
+            Enlarges the cell and displays the owner info inside of it.
         */
-        this.setState({ claimed: isClaimed});
+        if (!this.state.mouseOver) {
+            this.setState(() => ({
+                size: this.state.size * 3,
+                mouseOver: true,
+            }));
+            this.state.componentClasses.push("hover")
+        }
     }
 
-    setOwner(newOwner){
+    handleMouseOut(event) {
         /*
-            Sets the string value of this.state.owner.
+            Resets the cell size and hides the owner info.
         */
-       this.setState({ owner: newOwner});
+       if (this.state.mouseOver) {
+            this.setState(() => ({
+                size: this.originalSize,
+                mouseOver: false,
+                componentClasses: ["Cell"],
+            }));
+        }
     }
 
     render() {
@@ -35,18 +53,25 @@ class Cell extends Component {
 
         let cell_type;
         let cell_desc;
-        if (this.state.claimed) {
+        if (this.props.claimed) {
             cell_type = claimed_cell;
-            cell_desc = claimed_cell_desc + this.state.owner; 
+            cell_desc = claimed_cell_desc + this.props.owner;
+            this.state.componentClasses.push("claimed");
         } else {
             cell_type = unclaimed_cell
-            cell_desc = unclaimed_cell_desc + this.state.index;
+            cell_desc = unclaimed_cell_desc + this.props.index;
+            this.state.componentClasses.push("unclaimed");
         }
 
         return (
             // This needs to be modified to be a button instead of just an image.
-            <div>
-                <img src={cell_type} alt={cell_desc} width={this.state.size}></img>
+            <div className={this.state.componentClasses.join(' ')} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}
+                width={this.state.size} height={this.state.size}>
+                <img className="Cell-Img" src={cell_type} alt={cell_desc} width={this.state.size} 
+                    height={this.state.size}/>
+                <p className="Cell-Content">
+                    {this.state.mouseOver ? cell_desc : ""}
+                </p>
             </div>
         );
     }

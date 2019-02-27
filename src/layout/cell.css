@@ -1,0 +1,32 @@
+.Cell {
+    position: relative;
+    display: inline-block;
+    padding: 0%;
+    margin: 0%;
+}
+
+.Cell.unclaimed{
+    color: white;
+}
+
+.Cell.hover {
+    box-shadow: 0.25em 0.35em 0.1em #888888;
+}
+
+.Cell-Img {
+    padding: 0%;
+    margin: 0%;
+    display: block;
+    z-index: 0;
+}
+
+.Cell-Content {
+    position: absolute;
+    left: 0;
+    top: 35%;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    z-index: 1;
+}
