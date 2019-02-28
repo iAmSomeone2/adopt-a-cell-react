@@ -17,7 +17,7 @@
     padding: 0%;
     margin: 0%;
     display: block;
-    z-index: 0;
+    z-index: 1;
 }
 
 .Cell-Content {
@@ -28,5 +28,5 @@
     display: block;
     text-align: center;
     font-size: 1em;
-    z-index: 1;
+    z-index: 2;
 }
