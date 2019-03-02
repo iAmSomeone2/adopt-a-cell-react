@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 import './App.css';
 
 // Local imports
-import Cell from "./layout/cell"
-//import CellGrid from "./layout/cellGrid"
+import SubGrid from "./layout/subGrid";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          <Cell className="Cell" index={1} owner={""} claimed={false} size={64}/>
+          <SubGrid className="SubGrid" rowNum={5} colNum={3}/>
+          <SubGrid className="SubGrid" rowNum={5} colNum={5}/>
       </div>
     );
   }

@@ -23,13 +23,8 @@
   to { transform: rotate(360deg); }
 }
 
-
-CellFlyout {
-  background-color: white;
-  height: 4em;
-  color: black;
-  border-style: solid;
-  border-color:  #222;
-  border-width: 0.1em;
-  border-radius: 0.2em;
+.SubGrid {
+  margin: auto;
+  width: 50%;
+  z-index: 0;
 }
