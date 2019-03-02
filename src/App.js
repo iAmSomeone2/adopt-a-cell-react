@@ -3,14 +3,13 @@ import React, { Component } from 'react';
 import './App.css';
 
 // Local imports
-import SubGrid from "./layout/subGrid";
+import CellArray from "./layout/array";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          <SubGrid className="SubGrid" rowNum={5} colNum={3}/>
-          <SubGrid className="SubGrid" rowNum={5} colNum={5}/>
+          <CellArray/>
       </div>
     );
   }

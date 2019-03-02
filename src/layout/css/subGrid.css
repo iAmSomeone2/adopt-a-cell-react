@@ -3,5 +3,6 @@ table {
 }
 
 tr {
+    display: block;
     padding-top: 2px;
 }

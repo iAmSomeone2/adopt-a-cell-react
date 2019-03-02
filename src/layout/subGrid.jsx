@@ -18,7 +18,11 @@ class SubGrid extends Component {
         // Use GridRow to get each row.
         const rows = [...Array(this.props.rowNum).keys()];
         const cellGrid = rows.map((row) =>
-            <GridRow cellNum={this.props.colNum}/>
+            <GridRow
+                grid_id={this.props.grid_id}
+                cellNum={this.props.colNum}
+                cellSize={this.props.cellSize}
+            />
         );
 
         return cellGrid;

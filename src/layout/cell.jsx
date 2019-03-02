@@ -28,7 +28,7 @@ class Cell extends Component {
         */
         if (!this.state.mouseOver) {
             this.setState(() => ({
-                size: this.state.size * 3,
+                size: this.state.size * 2.5,
                 mouseOver: true,
             }));
             this.state.componentClasses.push("hover")

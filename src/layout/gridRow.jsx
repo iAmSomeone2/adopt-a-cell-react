@@ -9,7 +9,7 @@ class GridRow extends Component {
         const ids = [...Array(this.props.cellNum).keys()];
         const cells = ids.map((id) =>
             <td>
-                <Cell index={id+1} owner={""} claimed={false} size={64}/>
+                <Cell index={id+1} owner={""} claimed={false} size={this.props.cellSize}/>
             </td>
         );
         return cells;
