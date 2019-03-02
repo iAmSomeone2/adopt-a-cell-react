@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./cell.css"
+import "./css/cell.css"
 import unclaimed_cell from './assets/solar-cell_unclaimed.svg';
 import claimed_cell from './assets/solar-cell_claimed.svg';
 

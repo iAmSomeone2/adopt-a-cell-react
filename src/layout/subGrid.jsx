@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // Local imports
 import GridRow from "./gridRow";
-import "./subGrid.css";
+import "./css/subGrid.css";
 
 class SubGrid extends Component {
 
