@@ -38,7 +38,6 @@ The adopt-a-cell web app is a small web application for registering and displayi
    ```
    cd ./adopt-a-cell-react
    ```
-   <br>
    ```
    npm install
    ```
