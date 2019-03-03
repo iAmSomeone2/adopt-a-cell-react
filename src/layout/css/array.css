@@ -1,0 +1,10 @@
+.center-div {
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+}
+
+.inner-div {
+    display: inline-block;
+    padding: 1em;
+}

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // Local Imports
 import SubGrid from "./subGrid";
 import array_layout from  "./json/e2_array.json";
+import "./css/array.css"
 
 class CellArray extends Component {
     
@@ -26,6 +27,7 @@ class CellArray extends Component {
             console.log(grid); // Debug to check object output.
             panelArray.push(
                 <SubGrid
+                className={"inner-div"}
                 grid_id={grid.name}
                 colNum={grid.columns}
                 rowNum={grid.rows}
@@ -38,7 +40,7 @@ class CellArray extends Component {
 
     render(){
         return (
-            <div>
+            <div className={"outer-div"}>
                 {this.constructArray()}
             </div>
         );

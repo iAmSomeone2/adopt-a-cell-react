@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 // Local imports
 import Cell from "./cell";
+import "./css/gridRow.css"
 
 class GridRow extends Component {
 

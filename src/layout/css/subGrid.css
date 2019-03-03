@@ -1,8 +1,6 @@
 table {
-    border-spacing: 0px;
-}
-
-tr {
-    display: block;
-    padding-top: 2px;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 500px;
+    border-collapse: collapse;
 }
