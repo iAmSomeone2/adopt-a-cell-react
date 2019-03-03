@@ -33,7 +33,10 @@ class CellArray extends Component {
                         grid_id={grid.name}
                         colNum={grid.columns}
                         rowNum={grid.rows}
+                        startIdx={grid.start_idx}
                         cellSize={cellDefaults.size}
+                        cellClaimed={cellDefaults.claimed}
+                        cellOwner={cellDefaults.owner}
                         marginBottom={divHeightAttrib}
                     />
                 );
@@ -44,12 +47,14 @@ class CellArray extends Component {
                         grid_id={grid.name}
                         colNum={grid.columns}
                         rowNum={grid.rows}
+                        startIdx={grid.start_idx}
                         cellSize={cellDefaults.size}
+                        cellClaimed={cellDefaults.claimed}
+                        cellOwner={cellDefaults.owner}
                     />
                 );
             }
         }
-        console.log(panelArray);
         return panelArray;
     }
 

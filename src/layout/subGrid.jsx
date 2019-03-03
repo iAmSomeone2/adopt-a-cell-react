@@ -16,14 +16,24 @@ class SubGrid extends Component {
     constructGrid() {
         // Returns a grid containing all of the needed rows of cells.
         // Use GridRow to get each row.
-        const rows = [...Array(this.props.rowNum).keys()];
-        const cellGrid = rows.map((row) =>
-            <GridRow
-                grid_id={this.props.grid_id}
-                cellNum={this.props.colNum}
-                cellSize={this.props.cellSize}
-            />
-        );
+        const rows = this.props.rowNum;
+
+        let cellGrid = [];
+
+        for (let i = 0; i < rows; i++){
+            const startIdx = this.props.startIdx + ((i) * this.props.colNum);
+
+            cellGrid.push(
+                <GridRow
+                    grid_id={this.props.grid_id}
+                    cellNum={this.props.colNum}
+                    cellSize={this.props.cellSize}
+                    cellClaimed={this.props.cellClaimed}
+                    cellOwner={this.props.cellOwner}
+                    startIdx={startIdx}
+                />
+            );
+        }
 
         return cellGrid;
     }

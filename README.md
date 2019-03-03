@@ -14,12 +14,13 @@ The adopt-a-cell web app is a small web application for registering and displayi
 ## To Do
 - [x] Figure out how to make cell grids of arbitrary sizes (future proofing).
 - [x] Create the cell layout to match E2.
-- [ ] Feed all default cell info top-down from the main Array object to each Cell object.
+- [x] Feed all default cell info top-down from the main Array object to each Cell object.
 - [ ] Fix detail display of Cell objects. (See Cell Detail below)
 - [ ] Grab patron info for display.
 - [ ] Draw and incorperate vector graphic representing a top-down view of E2.
 - [ ] Test full interactivity.
-- [ ] Convert all map instances to arrays. (This will remove the need to have unique keys for )
+- [ ] Convert all map instances to arrays. (This will remove the need to have unique keys for each mapped object.)
+- [x] Properly implement cell index numbers.
 
 ### Stretch Goals
 - [ ] Make app reactive to window size and resolution.

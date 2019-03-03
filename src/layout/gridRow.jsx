@@ -7,12 +7,18 @@ import "./css/gridRow.css"
 class GridRow extends Component {
 
     constructRow(){
-        const ids = [...Array(this.props.cellNum).keys()];
-        const cells = ids.map((id) =>
-            <td>
-                <Cell index={id+1} owner={""} claimed={false} size={this.props.cellSize}/>
-            </td>
-        );
+        const cellIdx = this.props.startIdx;
+        const endIdx = cellIdx + this.props.cellNum;
+
+        let cells = [];
+        for (let i = cellIdx; i < endIdx; i++){
+            cells.push(
+                <td>
+                    <Cell index={i} owner={this.props.cellOwner} claimed={this.props.cellClaimed} size={this.props.cellSize}/>
+                </td>
+            );
+        }
+
         return cells;
     }
 
