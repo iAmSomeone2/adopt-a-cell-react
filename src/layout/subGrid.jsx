@@ -30,12 +30,19 @@ class SubGrid extends Component {
 
     render(){
         // Returns what gets rendered to the page.
+
+        let divStyle = { // In-line styling in React must be passed using an object.
+            "margin-bottom": this.props.marginBottom,
+        };
+
         return (
-            <table>
-                <tbody>
-                    {this.constructGrid()}
-                </tbody>
-            </table>
+            <div style={divStyle}>
+                <table>
+                    <tbody>
+                        {this.constructGrid()}
+                    </tbody>
+                </table>
+            </div>
         );
     }
 }

@@ -24,17 +24,32 @@ class CellArray extends Component {
         let panelArray = [];
         for (let grid_idx in subGrids){
             let grid = subGrids[grid_idx];
-            console.log(grid); // Debug to check object output.
-            panelArray.push(
-                <SubGrid
-                className={"inner-div"}
-                grid_id={grid.name}
-                colNum={grid.columns}
-                rowNum={grid.rows}
-                cellSize={cellDefaults.size}
-            />
-            );
+            if (grid.hasOwnProperty("padding_rows")) {
+                let divHeight = cellDefaults.size * grid.padding_rows;
+                let divHeightAttrib = divHeight.toString() + "px"; 
+                panelArray.push(
+                    <SubGrid
+                        className={"inner-div"}
+                        grid_id={grid.name}
+                        colNum={grid.columns}
+                        rowNum={grid.rows}
+                        cellSize={cellDefaults.size}
+                        marginBottom={divHeightAttrib}
+                    />
+                );
+            } else {
+                panelArray.push(
+                    <SubGrid
+                        className={"inner-div"}
+                        grid_id={grid.name}
+                        colNum={grid.columns}
+                        rowNum={grid.rows}
+                        cellSize={cellDefaults.size}
+                    />
+                );
+            }
         }
+        console.log(panelArray);
         return panelArray;
     }
 

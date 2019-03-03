@@ -22,7 +22,8 @@
         {
             "name": "top_0",
             "columns": 12,
-            "rows": 10 
+            "rows": 10,
+            "padding_rows": 5
         },
         {
             "name": "front_0",
