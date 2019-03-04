@@ -1,6 +1,8 @@
 {
   "name": "adopt-a-cell-react",
   "version": "0.1.0",
+  "author": "Brenden Davidson <brendend13@gmail.com>",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "react": "^16.8.1",
