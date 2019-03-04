@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 // Local Imports
 import SubGrid from "./subGrid";
-import array_layout from  "./json/e2_array.json";
+import ArrayLayout from  "./json/e2_array.json";
 import "./css/array.css"
+
+
 
 class CellArray extends Component {
     
@@ -18,12 +20,15 @@ class CellArray extends Component {
             Reads through the JSON layuot file and creates a JSX Element for the array
         */
 
-        // let subGridNum = Object.keys(array_layout.subGrid).length;
-        const subGrids = array_layout.subGrid; // This will be used to map the JSX Elements.
-        const cellDefaults = array_layout.cellDefault;
+        // let subGridNum = Object.keys(ArrayLayout.subGrid).length;
+        const subGrids = ArrayLayout.subGrid; // This will be used to map the JSX Elements.
+        const cellDefaults = ArrayLayout.cellDefault;
         let panelArray = [];
         for (let grid_idx in subGrids){
             let grid = subGrids[grid_idx];
+
+            // Check if an owner exists for the current cell.
+
             if (grid.hasOwnProperty("padding_rows")) {
                 let divHeight = cellDefaults.size * grid.padding_rows;
                 let divHeightAttrib = divHeight.toString() + "px"; 

@@ -2,9 +2,10 @@
     "cellDefault" : {
         "size" : "24",
         "claimed" : false,
-        "owner" : "" 
+        "owner" : "Leroy Jenkins" 
     },
-	"subGrid": [{
+	"subGrid": [
+        {
 			"name": "rear_0",
 			"columns": 9,
             "rows": 2,

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import "./css/cell.css"
-import unclaimed_cell from './assets/solar-cell_unclaimed.svg';
-import claimed_cell from './assets/solar-cell_claimed.svg';
+import UnclaimedCell from './assets/solar-cell_unclaimed.svg';
+import ClaimedCell from './assets/solar-cell_claimed.svg';
+
+
 
 const unclaimed_cell_desc = "Unclaimed cell #";
 const claimed_cell_desc = "Cell adopted by: ";
@@ -28,7 +30,7 @@ class Cell extends Component {
         */
         if (!this.state.mouseOver) {
             this.setState(() => ({
-                size: this.state.size * 2.5,
+                size: this.state.size * 3,
                 mouseOver: true,
             }));
             this.state.componentClasses.push("hover")
@@ -54,11 +56,11 @@ class Cell extends Component {
         let cell_type;
         let cell_desc;
         if (this.props.claimed) {
-            cell_type = claimed_cell;
+            cell_type = ClaimedCell;
             cell_desc = claimed_cell_desc + this.props.owner;
             this.state.componentClasses.push("claimed");
         } else {
-            cell_type = unclaimed_cell
+            cell_type = UnclaimedCell
             cell_desc = unclaimed_cell_desc + this.props.index;
             this.state.componentClasses.push("unclaimed");
         }

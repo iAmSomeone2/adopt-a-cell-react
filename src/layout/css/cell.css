@@ -24,10 +24,10 @@
 .Cell-Content {
     position: absolute;
     left: 0;
-    top: 35%;
+    top: 12%;
     width: 100%;
     display: block;
     text-align: center;
-    font-size: 1em;
+    font-size: 16px;
     z-index: 2;
 }

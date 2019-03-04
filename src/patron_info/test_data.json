@@ -1,0 +1,19 @@
+{
+    "adoptees": [
+        {
+            "cell_id": 1,
+            "first_name": "Leroy",
+            "last_name": "Jenkins"
+        },
+        {
+            "cell_id": 3,
+            "first_name": "Snickel",
+            "last_name": "the Dog"
+        },
+        {
+            "cell_id": 196,
+            "first_name": "John",
+            "last_name": "Doe"
+        }
+    ]
+}
