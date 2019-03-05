@@ -17,7 +17,18 @@ USER node
 RUN npm install \
     && npm run build
 
-# Expose port 8080
-EXPOSE 8080
-RUN ls -la
+# Create the shrunken production image
+FROM node:lts-alpine as PROD
+
+RUN mkdir -p /home/node/app \
+    && chown -R node:node /home/node/app \
+    && npm install -g serve
+
+COPY --from=BUILD /home/node/app/build /home/node/app/build
+
+WORKDIR /home/node/app
+USER node
+
+# Expose port 5000 and start the server when the container starts
+EXPOSE 5000
 CMD ["serve", "-s", "build"]
