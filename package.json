@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "author": "Brenden Davidson <brendend13@gmail.com>",
   "license": "MIT",
+  "homepage": "https://umnsvp.org/",
   "private": true,
   "dependencies": {
+
+  },
+  "devDependencies": {
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-scripts": "0.9.5"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
