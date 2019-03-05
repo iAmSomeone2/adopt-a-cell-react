@@ -1,0 +1,16 @@
+# Ignore node stuff
+node_modules
+npm-debug.log
+build/
+
+# The Dockerfiles, themselves
+Dockerfile
+.dockerignore
+
+# Git stuff and misc
+.git/
+.gitignore
+.vscode/
+*.md
+.directory
+example_code/
