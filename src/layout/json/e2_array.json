@@ -28,7 +28,7 @@
             "columns": 12,
             "rows": 10,
             "start_idx": 103,
-            "padding_rows": 8
+            "padding_rows": 5
         },
         {
             "name": "front_0",
