@@ -1,6 +1,6 @@
 server {
     listen 80 default_server;
-    root /home/node/app/build;
+    root /var/www/app/build;
     index index.html index.htm;
     server_name cell.umnsvp.org;
     location / {

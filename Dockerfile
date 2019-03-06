@@ -19,11 +19,10 @@ RUN npm install \
 # Create the shrunken production image
 FROM nginx:mainline-alpine as PROD
 
-RUN mkdir -p /home/node/app \
-    && chown -R node:node /home/node/app \
+RUN mkdir -p /var/www/app \
     && rm /etc/nginx/sites-available/default
 
-COPY --from=BUILD /home/node/app/build /home/node/app/build
+COPY --from=BUILD /home/node/app/build /var/www/app/build
 COPY --from=BUILD /home/node/app/nginx_config/default /etc/nginx/sites_available/default
 
 # WORKDIR /home/node/app
