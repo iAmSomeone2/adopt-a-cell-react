@@ -1,6 +1,6 @@
 {
     "cellDefault" : {
-        "size" : "24",
+        "size" : "18",
         "claimed" : false,
         "owner" : "Leroy Jenkins" 
     },
@@ -32,7 +32,7 @@
         },
         {
             "name": "front_0",
-            "columns": 12,
+            "columns": 11,
             "rows": 6,
             "start_idx": 223
         },
@@ -40,19 +40,19 @@
             "name": "front_1",
             "columns": 10,
             "rows": 2,
-            "start_idx": 295
+            "start_idx": 289
         },
         {
             "name": "front_2",
             "columns": 9,
             "rows": 1,
-            "start_idx": 315
+            "start_idx": 309
         },
         {
             "name": "front_3",
             "columns": 8,
             "rows": 1,
-            "start_idx": 324
+            "start_idx": 318
         }
     ]
 }
