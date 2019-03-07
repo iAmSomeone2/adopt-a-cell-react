@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import SubGrid from "./subGrid";
 import ArrayLayout from  "./json/e2_array.json";
 import "./css/array.css"
+import E2img from "./assets/e2.svg";
+import "./css/e2.css";
 
 
 
@@ -65,8 +67,11 @@ class CellArray extends Component {
 
     render(){
         return (
-            <div className={"outer-div"}>
-                {this.constructArray()}
+            <div className={"outer-div e2"}>
+                <img className={"e2img"} src={E2img} width={256} alt={""}/>
+                <div className={"cellArray"}>
+                    {this.constructArray()}
+                </div>
             </div>
         );
     }

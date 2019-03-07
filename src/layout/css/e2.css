@@ -1,0 +1,20 @@
+.e2 {
+    position: relative;
+    left: 0%;
+    width: 100%;
+}
+
+.e2img {
+    height: auto;
+}
+
+.cellArray {
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    z-index: 2;
+}
