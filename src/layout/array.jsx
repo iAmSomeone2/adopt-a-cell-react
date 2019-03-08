@@ -45,6 +45,7 @@ class CellArray extends Component {
                         cellClaimed={cellDefaults.claimed}
                         cellOwner={cellDefaults.owner}
                         marginBottom={divHeightAttrib}
+                        cellDetail={this.props.cellDetail}
                     />
                 );
             } else {
@@ -58,6 +59,7 @@ class CellArray extends Component {
                         cellSize={cellDefaults.size}
                         cellClaimed={cellDefaults.claimed}
                         cellOwner={cellDefaults.owner}
+                        cellDetail={this.props.cellDetail}
                     />
                 );
             }

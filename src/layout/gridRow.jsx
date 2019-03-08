@@ -29,7 +29,13 @@ class GridRow extends Component {
 
             cells.push(
                 <td>
-                    <Cell index={i} owner={adoptee} claimed={isClaimed} size={this.props.cellSize}/>
+                    <Cell
+                        index={i}
+                        owner={adoptee}
+                        claimed={isClaimed}
+                        size={this.props.cellSize}
+                        cellDetail={this.props.cellDetail}
+                    />
                 </td>
             );
         }
