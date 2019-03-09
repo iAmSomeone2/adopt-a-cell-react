@@ -27,8 +27,8 @@ class CellArray extends Component {
         const cellDefaults = ArrayLayout.cellDefault;
         let panelArray = [];
 
-        console.log("Overlay object @ Array:");
-        console.log(this.props.overlay);
+        //console.log("Overlay object @ Array:");
+        //console.log(this.props.overlay);
 
         for (let grid_idx in subGrids){
             let grid = subGrids[grid_idx];
@@ -49,7 +49,7 @@ class CellArray extends Component {
                         cellClaimed={cellDefaults.claimed}
                         cellOwner={cellDefaults.owner}
                         marginBottom={divHeightAttrib}
-                        overlay={this.props.overlay}
+                        //overlay={this.props.overlay}
                     />
                 );
             } else {
@@ -63,7 +63,7 @@ class CellArray extends Component {
                         cellSize={cellDefaults.size}
                         cellClaimed={cellDefaults.claimed}
                         cellOwner={cellDefaults.owner}
-                        overlay={this.props.overlay}
+                        //overlay={this.props.overlay}
                     />
                 );
             }

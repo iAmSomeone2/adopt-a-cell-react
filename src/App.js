@@ -12,8 +12,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <CellArray className={"center-div"} overlay={this._overlay}/>
-          <div id={"overlay"} ref={this._overlay}>
+          <CellArray className={"center-div"}/>
+          <div id={"overlay"}>
               <DetailCell/>
           </div>
       </div>
