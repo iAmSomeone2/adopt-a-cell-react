@@ -26,6 +26,10 @@ class CellArray extends Component {
         const subGrids = ArrayLayout.subGrid; // This will be used to map the JSX Elements.
         const cellDefaults = ArrayLayout.cellDefault;
         let panelArray = [];
+
+        console.log("Overlay object @ Array:");
+        console.log(this.props.overlay);
+
         for (let grid_idx in subGrids){
             let grid = subGrids[grid_idx];
 
@@ -45,7 +49,7 @@ class CellArray extends Component {
                         cellClaimed={cellDefaults.claimed}
                         cellOwner={cellDefaults.owner}
                         marginBottom={divHeightAttrib}
-                        cellDetail={this.props.cellDetail}
+                        overlay={this.props.overlay}
                     />
                 );
             } else {
@@ -59,7 +63,7 @@ class CellArray extends Component {
                         cellSize={cellDefaults.size}
                         cellClaimed={cellDefaults.claimed}
                         cellOwner={cellDefaults.owner}
-                        cellDetail={this.props.cellDetail}
+                        overlay={this.props.overlay}
                     />
                 );
             }

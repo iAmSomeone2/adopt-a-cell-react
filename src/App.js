@@ -7,13 +7,13 @@ import CellArray from "./layout/array";
 import DetailCell from "./layout/detailCell";
 
 class App extends Component {
-  _cellOverlay = React.createRef();
+  _overlay = React.createRef();
 
   render() {
     return (
       <div className="App">
-          <CellArray className={"center-div"} cellDetail={this._cellOverlay}/>
-          <div id={"overlay"} ref={this._cellOverlay}>
+          <CellArray className={"center-div"} overlay={this._overlay}/>
+          <div id={"overlay"} ref={this._overlay}>
               <DetailCell/>
           </div>
       </div>

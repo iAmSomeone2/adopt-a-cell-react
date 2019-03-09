@@ -34,7 +34,7 @@ class GridRow extends Component {
                         owner={adoptee}
                         claimed={isClaimed}
                         size={this.props.cellSize}
-                        cellDetail={this.props.cellDetail}
+                        overlay={this.props.overlay}
                     />
                 </td>
             );

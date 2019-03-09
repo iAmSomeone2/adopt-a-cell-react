@@ -25,8 +25,8 @@ class Cell extends Component {
     handleOnClick(){
         // Turn on the cell overlay
         console.log("Cell #" + this.props.index + " was clicked.");
-        console.log(this.props.cellDetail.current.style);
-        this.props.cellDetail.current.style.display = "block";
+        console.log(this.props.overlay.current.style);
+        this.props.overlay.current.style.display = "block";
     }
     
     render() {
