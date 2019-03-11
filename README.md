@@ -17,10 +17,11 @@ The adopt-a-cell web app is a small web application for registering and displayi
 - [x] Feed all default cell info top-down from the main Array object to each Cell object.
 - [ ] Fix detail display of Cell objects. (See Cell Detail below)
 - [x] Grab patron info for display.
-- [ ] Draw and incorporate vector graphic representing a top-down view of E2.
+- [x] Draw and incorporate vector graphic representing a top-down view of E2.
 - [ ] Test full interactivity.
 - [x] Convert all map instances to arrays.
 - [x] Properly implement cell index numbers.
+- [ ] Implement a global constants file.
 
 ### Stretch Goals
 - [ ] Make app reactive to window size and resolution.

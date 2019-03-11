@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import SubGrid from "./subGrid";
 import ArrayLayout from  "./json/e2_array.json";
 import "./css/array.css"
+import E2img from "./assets/e2.svg";
+import "./css/e2.css";
 
 
 
@@ -24,6 +26,10 @@ class CellArray extends Component {
         const subGrids = ArrayLayout.subGrid; // This will be used to map the JSX Elements.
         const cellDefaults = ArrayLayout.cellDefault;
         let panelArray = [];
+
+        //console.log("Overlay object @ Array:");
+        //console.log(this.props.overlay);
+
         for (let grid_idx in subGrids){
             let grid = subGrids[grid_idx];
 
@@ -43,6 +49,7 @@ class CellArray extends Component {
                         cellClaimed={cellDefaults.claimed}
                         cellOwner={cellDefaults.owner}
                         marginBottom={divHeightAttrib}
+                        detailRef={this.props.detailRef}
                     />
                 );
             } else {
@@ -56,6 +63,7 @@ class CellArray extends Component {
                         cellSize={cellDefaults.size}
                         cellClaimed={cellDefaults.claimed}
                         cellOwner={cellDefaults.owner}
+                        detailRef={this.props.detailRef}
                     />
                 );
             }
@@ -65,8 +73,11 @@ class CellArray extends Component {
 
     render(){
         return (
-            <div className={"outer-div"}>
-                {this.constructArray()}
+            <div className={"outer-div e2"}>
+                <img className={"e2img"} src={E2img} width={256} alt={""}/>
+                <div className={"cellArray"}>
+                    {this.constructArray()}
+                </div>
             </div>
         );
     }

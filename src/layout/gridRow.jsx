@@ -5,7 +5,7 @@ import Cell from "./cell";
 import "./css/gridRow.css"
 
 // Import patron info
-import Patrons from "../patron_info/test_data.json";
+import Patrons from "../patron_info/2019_adoptees.json";
 
 class GridRow extends Component {
 
@@ -29,7 +29,13 @@ class GridRow extends Component {
 
             cells.push(
                 <td>
-                    <Cell index={i} owner={adoptee} claimed={isClaimed} size={this.props.cellSize}/>
+                    <Cell
+                        index={i}
+                        owner={adoptee}
+                        claimed={isClaimed}
+                        size={this.props.cellSize}
+                        detailRef={this.props.detailRef}
+                    />
                 </td>
             );
         }

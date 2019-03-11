@@ -3,13 +3,26 @@
 }
 
 .center-div {
-  margin: 0 auto;
-  width: 300px;
+  margin: auto;
+  width: 80%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.container {
+  position: relative;
+  width: 30%;
+  margin: auto;
+}
+
+.detail-window {
+  position: absolute;
+  top: 0%;
+  left: 100%;
+}
+
+.cell-array {
+  position: absolute;
+  left: 0%;
+  float: left;
 }
 
 .App-header {
@@ -23,13 +36,22 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .SubGrid {
   margin: auto;
   width: 50%;
   z-index: 0;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
 }
