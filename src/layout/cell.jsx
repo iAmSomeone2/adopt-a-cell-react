@@ -4,7 +4,7 @@ import "./css/cell.css"
 import UnclaimedCell from './assets/solar-cell_unclaimed.svg';
 import ClaimedCell from './assets/solar-cell_claimed.svg';
 
-const jsonName = "current_cell.json";
+const JSON_NAME = "current_cell.json";
 
 class Cell extends Component {
     constructor(props){
@@ -25,17 +25,38 @@ class Cell extends Component {
         };
     }
 
+    // ***Mouse event handlers***
     handleOnClick(){
         // Turn on the cell overlay
         console.log("Cell #" + this.props.index + " was clicked.");
         //console.log(this.props.overlay.current.style);
         //this.props.overlay.current.style.display = "block";
-        this.writeCellData();
-        fs.readFile(jsonName, (err, data) => {
+        
+        fs.readFile(JSON_NAME, (err, data) => {
             if (err) throw err;
             let cellData = JSON.parse(data);
             console.log(cellData);
         });
+    }
+
+    handleMouseEnter(){
+        this.writeCellData();
+    }
+
+    handleMouseLeave(){
+        this.deleteCellData();
+    }
+
+    deleteCellData(){
+        // The JSON file is deleted so that the overview cell knows to hide.
+        try {
+            fs.unlink(JSON_NAME, (err) => {
+                if (err) throw err;
+            });
+            console.log(JSON_NAME + " was deleted from memory.");
+        } catch (error) {
+            console.log(JSON_NAME + " does not exist, so it cannot be deleted."); 
+        }
     }
 
     writeCellData(){
@@ -52,9 +73,9 @@ class Cell extends Component {
 
        const dataAsJSON = JSON.stringify(cellData);
 
-       fs.writeFile(jsonName, dataAsJSON, 'utf8', (err) => {
+       fs.writeFile(JSON_NAME, dataAsJSON, 'utf8', (err) => {
            if (err) throw err;
-           console.log("Cell data written to " + jsonName);
+           console.log("Cell data written to " + JSON_NAME);
        });
     }
     
@@ -75,7 +96,9 @@ class Cell extends Component {
 
         return (
             <div className={this.state.componentClasses.join(' ')}
-                 onClick={() => {this.handleOnClick()}} 
+                onClick={() => {this.handleOnClick()}}
+                onMouseEnter={() => {this.handleMouseEnter()}}
+                onMouseLeave={() => {this.handleMouseLeave()}}
                 width={this.state.size} height={this.state.size}>
                 <img className="Cell-Img" src={cell_type} alt={cell_desc} width={this.state.size} 
                     height={this.state.size}/>

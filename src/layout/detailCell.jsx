@@ -11,9 +11,6 @@ const unclaimed_cell_desc = "Unclaimed cell #";
 const claimed_cell_desc = "Cell adopted by: ";
 
 class DetailCell extends Component {
-
-
-
     render(){
         let cellImg;
         let cellDesc;
