@@ -7,19 +7,18 @@ import CellArray from "./layout/array";
 import DetailWindow from "./detailWindow";
 
 class App extends Component {
-  _overlay = React.createRef();
+  _detailRef = React.createRef();
 
   render() {
     return (
       <div className={"App"} >
         <div className={"container"}>
           <div className={"cell-array"}>
-            <CellArray/>
+            <CellArray detailRef={this._detailRef}/>
             <div className={"detail-window"}>
-              <DetailWindow/>
+              <DetailWindow ref={this._detailRef}/>
             </div>
           </div>
-          
         </div>
       </div>
     );

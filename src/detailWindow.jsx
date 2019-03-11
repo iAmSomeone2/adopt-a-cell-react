@@ -58,18 +58,17 @@ class DetailWindow extends Component {
         // Update the state indicating the existance of the data file
         this.jsonExists();
         // Component info is determined based on whether the JSON file exists.
-        if (this.state.infoExists)  {
+        if (this.infoExists)  {
             // Grab the cell data and apply it to the state.
             this.parseJSON();
-            if (this.state.cellOwned) {
+            if (this.cellOwned) {
                 // Cell has an owner so class reflects that.
                 //this.state.viewClass = ["owned-cell"];
             } else {
                 //this.state.viewClass = ["free-cell"];
             }
 
-            this.state.viewClass.shift();
-
+            console.log("A Detail Cell should be rendering.")
             return (
                 <DetailCell 
                     size={128}
@@ -81,6 +80,7 @@ class DetailWindow extends Component {
         } else {
             // Show the SVP logo.
             //this.state.viewClass = ["logo"];
+            console.log("The SVP logo should be rendering.")
             return (
                 <div>
                     <img src={SVP_logo} alt={"SVP logo."} width={128}/>
@@ -90,11 +90,13 @@ class DetailWindow extends Component {
     }
 
     render() {
-        // Set which components are applied to the detailWindow. 
-        let drawComponent = this.setComponent();
+        // Set which components are applied to the detailWindow.
+        console.log("Detail window should be re-rendering.")
 
         return (
-            drawComponent
+            <div>
+                {this.setComponent()}
+            </div>
         );
     }
 }

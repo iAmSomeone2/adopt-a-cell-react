@@ -37,14 +37,18 @@ class Cell extends Component {
             let cellData = JSON.parse(data);
             console.log(cellData);
         });
+        console.log("DetailWindow object:");
+        console.log(this.props.detailRef.current);
     }
 
     handleMouseEnter(){
         this.writeCellData();
+        this.props.detailRef.current.render();
     }
 
     handleMouseLeave(){
         this.deleteCellData();
+        this.props.detailRef.current.render();
     }
 
     deleteCellData(){
