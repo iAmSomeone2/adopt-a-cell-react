@@ -3,7 +3,7 @@ FROM node:lts-alpine as BUILD
 # Create the needed directories, make sure git is installed, clone the repo,
 # and move the repo to the node user's app directory.
 RUN apk add --no-cache git \
-    && git clone -b cell-overhaul https://github.com/iAmSomeone2/adopt-a-cell-react.git ./app/ \
+    && git clone -b pop-up https://github.com/iAmSomeone2/adopt-a-cell-react.git ./app/ \
     && apk del git \
     && mv -f ./app/ /home/node/ \
     && chown -R node:node /home/node/app

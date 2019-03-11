@@ -4,8 +4,6 @@ import "./css/detailCell.css";
 import UnclaimedCell from './assets/solar-cell_unclaimed.svg';
 import ClaimedCell from './assets/solar-cell_claimed.svg';
 
-//Adoptee info
-// import Patrons from "../patron_info/test_data.json";
 
 const unclaimed_cell_desc = "Unclaimed cell #";
 const claimed_cell_desc = "Cell adopted by: ";
