@@ -4,18 +4,23 @@ import './App.css';
 
 // Local imports
 import CellArray from "./layout/array";
-import DetailCell from "./layout/detailCell";
+import DetailWindow from "./detailWindow";
 
 class App extends Component {
   _overlay = React.createRef();
 
   render() {
     return (
-      <div className="App">
-          <CellArray className={"center-div"}/>
-          <div id={"overlay"}>
-              <DetailCell/>
+      <div className={"App"} >
+        <div className={"container"}>
+          <div className={"cell-array"}>
+            <CellArray/>
+            <div className={"detail-window"}>
+              <DetailWindow/>
+            </div>
           </div>
+          
+        </div>
       </div>
     );
   }

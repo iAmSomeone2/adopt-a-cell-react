@@ -51,7 +51,7 @@ class Cell extends Component {
         // The JSON file is deleted so that the overview cell knows to hide.
         try {
             fs.unlink(JSON_NAME, (err) => {
-                if (err) throw err;
+                //if (err) throw err;
             });
             console.log(JSON_NAME + " was deleted from memory.");
         } catch (error) {

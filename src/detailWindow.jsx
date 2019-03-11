@@ -8,14 +8,16 @@ import SVP_logo from "./svp_logo.svg";
 const JSON_NAME = "current_cell.json";
 
 class DetailWindow extends Component {
+    // Variable declarations
+    cellOwner = "";
+    cellOwned = false;
+    cellID = -1;
+    infoExists = false;
+
     constructor(props) {
         super(props);
         this.state = {
-            viewClass: "logo",
-            cellOwner: "",
-            cellOwned: false,
-            cellID: 0,
-            infoExists: false
+            viewClass: ["logo"]
         };
     }
 
@@ -31,7 +33,7 @@ class DetailWindow extends Component {
                 fileFound = true;
             }
 
-            this.setState({ infoExists: fileFound });
+            this.infoExists = fileFound;
         });
     }
 
@@ -45,21 +47,40 @@ class DetailWindow extends Component {
         fs.readFile(JSON_NAME, (err, data) => {
             if (err) throw err; 
             cellData = JSON.parse(data);
-            this.setState({
-                cellID: cellData.id,
-                cellOwner: cellData.adoptee,
-                cellOwned: cellData.isClaimed
-            });
+            this.cellID = cellData.id;
+            this.cellOwner = cellData.adoptee;
+            this.cellOwned = cellData.isClaimed;
             console.log(cellData);
         });
     }
 
     setComponent() {
+        // Update the state indicating the existance of the data file
+        this.jsonExists();
         // Component info is determined based on whether the JSON file exists.
         if (this.state.infoExists)  {
             // Grab the cell data and apply it to the state.
+            this.parseJSON();
+            if (this.state.cellOwned) {
+                // Cell has an owner so class reflects that.
+                //this.state.viewClass = ["owned-cell"];
+            } else {
+                //this.state.viewClass = ["free-cell"];
+            }
+
+            this.state.viewClass.shift();
+
+            return (
+                <DetailCell 
+                    size={128}
+                    adoptee={this.cellOwner}
+                    id={this.cellID}
+                    isClaimed={this.cellOwned}
+                />
+            );
         } else {
             // Show the SVP logo.
+            //this.state.viewClass = ["logo"];
             return (
                 <div>
                     <img src={SVP_logo} alt={"SVP logo."} width={128}/>
@@ -69,11 +90,12 @@ class DetailWindow extends Component {
     }
 
     render() {
-        // Update the state indicating the existance of the data file
-        jsonExists();
-
         // Set which components are applied to the detailWindow. 
-        let drawComponent = setComponent();
+        let drawComponent = this.setComponent();
+
+        return (
+            drawComponent
+        );
     }
 }
 
