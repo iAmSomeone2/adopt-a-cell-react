@@ -1,9 +1,9 @@
 {
   "name": "adopt-a-cell-react",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Brenden Davidson <brendend13@gmail.com>",
   "license": "MIT",
-  "homepage": "https://umnsvp.org/",
+  "homepage": "https://cell.bdavidson.dev/",
   "private": true,
   "dependencies": {
     "webfontloader": "^1.6.28"

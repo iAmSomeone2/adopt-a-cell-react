@@ -19,7 +19,7 @@
 }
 
 .contribute_btn:hover {
-    animation-duration: 400ms;
+    animation-duration: 200ms;
     animation-name: btn_lift;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
@@ -35,7 +35,7 @@
     from {
         background-color: #FFCC33;
         z-index: 1;
-        left: 8%;
+        left: 5%;
         font-size: 3em;
         box-shadow: #323232AA 0.15em 0.2em;
     }
@@ -56,7 +56,7 @@
     }
     to {
         z-index: 1;
-        left: 8%;
+        left: 5%;
         font-size: 3em;
         box-shadow: #323232AA 0.15em 0.2em;
     }

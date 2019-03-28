@@ -5,7 +5,7 @@ import Cell from "./cell";
 import "./css/gridRow.css"
 
 // Import patron info
-import Patrons from "../patron_info/test_data.json";
+import Patrons from "../patron_info/2019_adoptees.json";
 
 class GridRow extends Component {
 
