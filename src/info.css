@@ -1,0 +1,76 @@
+.contribute_btn {
+    position: absolute;
+    left: 15%;
+    top: 0%;
+
+    /*
+        Set up the font
+    */
+    font-family: "Roboto", sans-serif;
+    font-size: 2em;
+
+    /*
+        Set up the button design
+    */
+    background-color: #FFCC33;
+    border-radius: 15px;
+    border-color: black;
+    box-shadow: #545454FF 0.09em 0.13em; 
+}
+
+.contribute_btn:hover {
+    animation-duration: 400ms;
+    animation-name: btn_lift;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.contribute_btn:active {
+    animation-name: btn_click;
+    animation-duration: 50ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn_click {
+    from {
+        background-color: #FFCC33;
+        z-index: 1;
+        left: 8%;
+        font-size: 3em;
+        box-shadow: #323232AA 0.15em 0.2em;
+    }
+    to {
+        background-color: rgb(117, 99, 45);
+        font-size: 2.8em;
+        left: 10%;
+        box-shadow: #323232AA 0.1em 0.15em;
+    }
+}
+
+@keyframes btn_lift {
+    from {
+        left: 15%;
+        font-size: 2em;
+        z-index: 0;
+        box-shadow: #545454FF 0.09em 0.13em;  
+    }
+    to {
+        z-index: 1;
+        left: 8%;
+        font-size: 3em;
+        box-shadow: #323232AA 0.15em 0.2em;
+    }
+}
+
+.text {
+    z-index: 0;
+    position: relative;
+    top: 45px;
+}
+
+.content {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1em;
+    width: 200px;
+    text-align: left;
+}

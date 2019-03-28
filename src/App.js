@@ -5,6 +5,7 @@ import './App.css';
 // Local imports
 import CellArray from "./layout/array";
 import DetailWindow from "./detailWindow";
+import Info from "./info";
 
 class App extends Component {
   _detailRef = React.createRef();
@@ -17,6 +18,9 @@ class App extends Component {
             <CellArray detailRef={this._detailRef}/>
             <div className={"detail-window"}>
               <DetailWindow ref={this._detailRef}/>
+            </div>
+            <div className={"info-display"}>
+              <Info/>
             </div>
           </div>
         </div>

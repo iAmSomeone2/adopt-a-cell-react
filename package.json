@@ -5,7 +5,9 @@
   "license": "MIT",
   "homepage": "https://umnsvp.org/",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "webfontloader": "^1.6.28"
+  },
   "devDependencies": {
     "react": "^16.8.1",
     "react-dom": "^16.8.1",

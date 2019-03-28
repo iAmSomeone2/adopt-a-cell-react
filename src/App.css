@@ -4,19 +4,27 @@
 
 .center-div {
   margin: auto;
-  width: 80%;
+  width: 100%;
 }
 
 .container {
   position: relative;
-  width: 30%;
+  width: 40%;
   margin: auto;
 }
 
 .detail-window {
   position: absolute;
+  display: inline-block;
   top: 0%;
   left: 100%;
+}
+
+.info-display{
+  position: absolute;
+  display: inline-block;
+  top: 25%;
+  left: 110%
 }
 
 .cell-array {
