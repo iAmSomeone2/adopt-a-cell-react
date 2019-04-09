@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 // Local Imports
 import SubGrid from "./subGrid";
+import PatronData from "../logic/patronData";
 import ArrayLayout from  "./json/e2_array.json";
 import "./css/array.css"
 import E2img from "./assets/e2.svg";
@@ -19,7 +20,7 @@ class CellArray extends Component {
 
     constructArray(){
         /*
-            Reads through the JSON layuot file and creates a JSX Element for the array
+            Reads through the JSON layout file and creates a JSX Element for the array
         */
 
         // let subGridNum = Object.keys(ArrayLayout.subGrid).length;
@@ -27,8 +28,12 @@ class CellArray extends Component {
         const cellDefaults = ArrayLayout.cellDefault;
         let panelArray = [];
 
-        //console.log("Overlay object @ Array:");
-        //console.log(this.props.overlay);
+        // Create a new patronData object to pass to the sub-grids.
+        let patronData = new PatronData();
+        console.log("PatronData object created.");
+        console.log(patronData.cellData);
+        console.log(patronData.patronData);
+        console.log(patronData.totalRaised);
 
         for (let grid_idx in subGrids){
             let grid = subGrids[grid_idx];
@@ -50,6 +55,7 @@ class CellArray extends Component {
                         cellOwner={cellDefaults.owner}
                         marginBottom={divHeightAttrib}
                         detailRef={this.props.detailRef}
+                        patronData={patronData}
                     />
                 );
             } else {
@@ -64,6 +70,7 @@ class CellArray extends Component {
                         cellClaimed={cellDefaults.claimed}
                         cellOwner={cellDefaults.owner}
                         detailRef={this.props.detailRef}
+                        patronData={patronData}
                     />
                 );
             }
