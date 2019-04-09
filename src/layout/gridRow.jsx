@@ -5,7 +5,7 @@ import Cell from "./cell";
 import "./css/gridRow.css"
 
 // Import patron info
-import Patrons from "../patron_info/2019_adoptees.json";
+//import Patrons from "../patron_info/2019_adoptees.json";
 
 class GridRow extends Component {
 
@@ -16,14 +16,32 @@ class GridRow extends Component {
         let cells = [];
         for (let i = cellIdx; i < endIdx; i++){
             // See if adoptee info exists for this cell, and set it if it does
-            const adopteeList = Patrons.adoptees; // For some reason these are always seen as ints despite them being objects.
+            const adopteeList = this.props.patronData.patronData;
+            const cellList = this.props.patronData.cellData;
             let adoptee = this.props.cellOwner;
             let isClaimed = this.props.cellClaimed;
             // console.log(adopteeList);
-            for (let idx in adopteeList){
-                if (adopteeList[idx].cell_id === i){
-                    adoptee = adopteeList[idx].first_name + " " + adopteeList[idx].last_name;
-                    isClaimed = true;
+            for (let cell of cellList){
+                // Iterate over the list of adoptees in the cell
+                if (cell.adoptee_ids.length === 1) {
+                    let id = cell.adoptee_ids[0] - 1;
+                    adoptee = adopteeList[id].first_name;
+                    adoptee += " " + adopteeList[id].last_name;
+                } else {
+                    if (cell.adoptee_ids.length > 0) {
+                        adoptee = "";
+                        let i = 0;
+                        let len = cell.adoptee_ids.length;
+                        for (let id of cell.adoptee_ids) {
+                            id -= 1;
+                            adoptee += adopteeList[id].first_name;
+                            adoptee += " " + adopteeList[id].last_name;
+                            if (i < len) {
+                                adoptee += " and ";
+                            }
+                            i++;
+                        }
+                    }
                 }
             }
 

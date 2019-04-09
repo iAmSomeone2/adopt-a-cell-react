@@ -32,6 +32,7 @@ class SubGrid extends Component {
                     cellOwner={this.props.cellOwner}
                     startIdx={startIdx}
                     detailRef={this.props.detailRef}
+                    patronData={this.props.patronData}
                 />
             );
         }
