@@ -39,34 +39,22 @@ class PatronData {
             .catch((error) => {
                 console.error(error);
             })
-    }
 
-    // Set up getters and setters here.
-    /*
-    get cellData() {
-        return this.cellData;
-    }
+        /*
+        // We're going to try to use a XMLHttpRequest here since I can't get fetch to work.
+        let request = new XMLHttpRequest();
+        request.open('GET', url);
+        request.responseType = 'json';
+        request.send();
 
-    set cellData(data) {
-        this.cellData = data;
+        request.onload = () => {
+            let aacData = request.response;
+            this.patronData = aacData.patron_list;
+            this.cellData = aacData.cells;
+            this.totalRaised = aacData.total_raised;
+        };
+        */
     }
-
-    get patronData() {
-        return this.patronData;
-    }
-
-    set patronData(data) {
-        this.patronData = data;
-    }
-
-    get totalRaised() {
-        return this.totalRaised;
-    }
-
-    set totalRaised(total) {
-        this.totalRaised = total;
-    }
-    */
 }
 
 export default PatronData;
