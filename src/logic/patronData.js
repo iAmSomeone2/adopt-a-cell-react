@@ -21,7 +21,11 @@ class PatronData {
             UpdateData grabs the most recent version of the patron data from where it's hosted.
          */
         // Fetch the data from the url.
-        fetch(url, {mode: "no-cors"})
+        fetch(url, {
+            crossDomain:true,
+            method: "GET",
+            headers: {'Content-Type':'application/json'},
+        })
         // Convert the response to JSON and add the respective entries to the their variables.
             .then((resp) => resp.json())
                 .then((data) => {
