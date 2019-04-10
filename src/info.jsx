@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Local imports
-import "./info.css"
+import "./info.css";
 
 const CAMPAIGN_SRC = "https://crowdfund.umn.edu/?cfpage=project&project_id=26458";
 
@@ -21,23 +21,25 @@ class Info extends Component {
 
     render() {
         return (
-            <div className={"content"}>
+            <div>
                 <button
                     type="button"
-                    className="contribute_btn"
+                    className={"contribute_btn"}
                     onClick={this.handleClick}
                 >
                     Adopt!
                 </button>
-                <div className="text">
-                    <p>
-                        Hover your mouse over a yellow cell to see who adopted it! Mobile users
-                        can tap on the cells.
-                    </p>
-                    <p>
-                        To have a cell adopted in your name, contribute $50 to our campaign.
-                        $25 donations will be paired to jointly adopt a cell.
-                    </p>
+                <div className={"content card"}>
+                    <div className={"text"}>
+                        <p>
+                            Hover your mouse over a yellow cell to see who adopted it! Mobile users
+                            can tap on the cells.
+                        </p>
+                        <p>
+                            To have a cell adopted in your name, contribute $50 to our campaign.
+                            $25 donations will be paired to jointly adopt a cell.
+                        </p>
+                    </div>
                 </div>
             </div>
         );

@@ -1,7 +1,8 @@
 .contribute_btn {
     position: absolute;
-    left: 15%;
-    top: 0%;
+    display: inline-block;
+    left: 25%;
+    top: 0;
 
     /*
         Set up the font
@@ -13,9 +14,9 @@
         Set up the button design
     */
     background-color: #FFCC33;
-    border-radius: 15px;
+    border-radius: 10px;
     border-color: transparent;
-    box-shadow: #545454FF 0.09em 0.13em; 
+    box-shadow: #545454FF 0.05em 0.13em 0.2em;
 }
 
 .contribute_btn:hover {
@@ -35,42 +36,52 @@
     from {
         background-color: #FFCC33;
         z-index: 1;
-        left: 5%;
-        font-size: 3em;
-        box-shadow: #323232AA 0.15em 0.2em;
+        left: 20%;
+        font-size: 2.5em;
+        box-shadow: #323232AA 0.1em 0.15em 0.4em;
     }
     to {
         background-color: rgb(117, 99, 45);
-        font-size: 2.8em;
-        left: 10%;
-        box-shadow: #323232AA 0.1em 0.15em;
+        font-size: 2em;
+        left: 25%;
+        box-shadow: #323232AA 0.075em 0.08em 0.1em;
     }
 }
 
 @keyframes btn_lift {
     from {
-        left: 15%;
+        left: 25%;
         font-size: 2em;
         z-index: 0;
-        box-shadow: #545454FF 0.09em 0.13em;  
+        box-shadow: #545454FF 0.05em 0.13em 0.2em;
     }
     to {
         z-index: 1;
-        left: 5%;
-        font-size: 3em;
-        box-shadow: #323232AA 0.15em 0.2em;
+        left: 20%;
+        font-size: 2.5em;
+        box-shadow: #323232AA 0.1em 0.15em 0.4em;
     }
 }
 
 .text {
     z-index: 0;
-    position: relative;
-    top: 45px;
+    margin: 0.5em 0.75em 0.5em 0.5em;
 }
 
 .content {
+    z-index: -1;
+    position: relative;
+    top: 45px;
+    background-color: #FAFAFA;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1em;
-    width: 200px;
+    width: 15em;
+    height: max-content;
     text-align: left;
+}
+
+.card {
+    box-shadow: 0.02em 0.05em 0.35em #323232AA;
+    border-radius: 5px;
+    border-color: transparent;
 }

@@ -11,6 +11,7 @@
   position: relative;
   width: 40%;
   margin: auto;
+  background-color: #D2D2DA;
 }
 
 .detail-window {
@@ -48,6 +49,10 @@
   margin: auto;
   width: 50%;
   z-index: 0;
+}
+
+.testview {
+  border: 5px solid red;
 }
 
 #overlay {

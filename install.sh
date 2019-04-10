@@ -6,4 +6,5 @@ echo Copying build files to prod...
 cp -r build/* /var/www/cell.bdavidson.dev/html/
 echo Restarting nginx...
 systemctl restart nginx
-echo DONE!\n
+echo DONE!
+echo # Just outputting a blank line.
