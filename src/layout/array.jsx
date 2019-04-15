@@ -26,59 +26,69 @@ class CellArray extends Component {
         // let subGridNum = Object.keys(ArrayLayout.subGrid).length;
         const subGrids = ArrayLayout.subGrid; // This will be used to map the JSX Elements.
         const cellDefaults = ArrayLayout.cellDefault;
-        let panelArray = [];
 
         // Create a new patronData object to pass to the sub-grids.
         let patronData = new PatronData();
-        console.log("PatronData object created.");
-        console.log(patronData.cellData);
-        console.log(patronData.patronData);
-        console.log(patronData.totalRaised);
-
-        for (let grid_idx in subGrids){
-            let grid = subGrids[grid_idx];
-
-            // Check if an owner exists for the current cell.
-
-            if (grid.hasOwnProperty("padding_rows")) {
-                let divHeight = cellDefaults.size * grid.padding_rows;
-                let divHeightAttrib = divHeight.toString() + "px"; 
-                panelArray.push(
-                    <SubGrid
-                        className={"inner-div"}
-                        grid_id={grid.name}
-                        colNum={grid.columns}
-                        rowNum={grid.rows}
-                        startIdx={grid.start_idx}
-                        cellSize={cellDefaults.size}
-                        cellClaimed={cellDefaults.claimed}
-                        cellOwner={cellDefaults.owner}
-                        marginBottom={divHeightAttrib}
-                        detailRef={this.props.detailRef}
-                        patronData={patronData}
-                    />
-                );
-            } else {
-                panelArray.push(
-                    <SubGrid
-                        className={"inner-div"}
-                        grid_id={grid.name}
-                        colNum={grid.columns}
-                        rowNum={grid.rows}
-                        startIdx={grid.start_idx}
-                        cellSize={cellDefaults.size}
-                        cellClaimed={cellDefaults.claimed}
-                        cellOwner={cellDefaults.owner}
-                        detailRef={this.props.detailRef}
-                        patronData={patronData}
-                    />
-                );
+        let panelArray = [];
+        patronData.updateData().then((response) =>{
+            console.log(response);
+            console.log("PatronData object created.");
+            console.log(patronData);
+        }).catch ((error) => {
+            console.log(error);
+        }).then(() => {
+            for (let grid_idx in subGrids){
+                let grid = subGrids[grid_idx];
+                // Check if an owner exists for the current cell.
+    
+                if (grid.hasOwnProperty("padding_rows")) {
+                    let divHeight = cellDefaults.size * grid.padding_rows;
+                    let divHeightAttrib = divHeight.toString() + "px";
+                    console.log("Pushing SubGrid with padding...");
+                    panelArray.push(
+                        <SubGrid
+                            className={"inner-div"}
+                            grid_id={grid.name}
+                            colNum={grid.columns}
+                            rowNum={grid.rows}
+                            startIdx={grid.start_idx}
+                            cellSize={cellDefaults.size}
+                            cellClaimed={cellDefaults.claimed}
+                            cellOwner={cellDefaults.owner}
+                            marginBottom={divHeightAttrib}
+                            detailRef={this.props.detailRef}
+                            patronData={patronData}
+                        />
+                    );
+                } else {
+                    console.log("Pushing SubGrid...");
+                    panelArray.push(
+                        <SubGrid
+                            className={"inner-div"}
+                            grid_id={grid.name}
+                            colNum={grid.columns}
+                            rowNum={grid.rows}
+                            startIdx={grid.start_idx}
+                            cellSize={cellDefaults.size}
+                            cellClaimed={cellDefaults.claimed}
+                            cellOwner={cellDefaults.owner}
+                            detailRef={this.props.detailRef}
+                            patronData={patronData}
+                        />
+                    );
+                }
             }
-        }
+        })
+        
+        console.log(panelArray);
+        console.log("This should print last");
         return panelArray;
     }
 
+    // TODO: Rework all array rendering to work with async methods.
+
     render(){
+        console.log("Rendering Array...");
         return (
             <div className={"outer-div e2"}>
                 <img className={"e2img"} src={E2img} width={256} alt={""}/>

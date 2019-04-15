@@ -16,8 +16,9 @@ class GridRow extends Component {
         let cells = [];
         for (let i = cellIdx; i < endIdx; i++){
             // See if adoptee info exists for this cell, and set it if it does
-            const adopteeList = this.props.patronData.patronData;
-            const cellList = this.props.patronData.cellData;
+            const adopteeList = this.props.patronData.getPatronData();
+            console.log(adopteeList);
+            const cellList = this.props.patronData.getCellData();
             let adoptee = this.props.cellOwner;
             let isClaimed = this.props.cellClaimed;
             // console.log(adopteeList);
@@ -53,6 +54,7 @@ class GridRow extends Component {
                         claimed={isClaimed}
                         size={this.props.cellSize}
                         detailRef={this.props.detailRef}
+                        key={i.toString() + adoptee}
                     />
                 </td>
             );

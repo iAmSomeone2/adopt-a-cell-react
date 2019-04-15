@@ -17,6 +17,7 @@ class SubGrid extends Component {
         // Returns a grid containing all of the needed rows of cells.
         // Use GridRow to get each row.
         const rows = this.props.rowNum;
+        console.log("Making a subgrid.")
 
         let cellGrid = [];
 
@@ -46,6 +47,8 @@ class SubGrid extends Component {
         let divStyle = { // In-line styling in React must be passed using an object.
             "margin-bottom": this.props.marginBottom,
         };
+
+        console.log("Rendering SubGrid...");
 
         return (
             <div style={divStyle}>
